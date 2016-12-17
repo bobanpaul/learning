@@ -12,7 +12,7 @@ public class QuickSort {
 	public static void main(String[] args) {
 
 		
-		int[] a = {2,33,4,37,55,32,3};
+		int[] a = {37,33,4,37,55,37,3};
 		quicksort(a,0,a.length-1);
 		
 		System.out.println(Arrays.toString(a));;
@@ -34,15 +34,16 @@ public class QuickSort {
 	
 	private static int getpivot(int a[],int start, int end){
 		
-		int pivot = a[start];
+		int pivot = a[start]+1;
 		int left = start;
 		int right = end;
 		
-		while(left<right){
+
+		while(left<=right){
 			
-			while(a[left]<pivot)
+			if(a[left]<=pivot)
 				left++;
-			while(a[right]>pivot)
+			if(a[right]>pivot)
 				right--;
 			
 			if(left<right){
@@ -51,8 +52,9 @@ public class QuickSort {
 			
 			
 		}
+		swap(a,right,start);
 				
-		return left;
+		return right;
 	}
 	
 	private static void swap(int a[],int b1, int b2){
