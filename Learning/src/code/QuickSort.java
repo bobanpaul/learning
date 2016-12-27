@@ -12,7 +12,7 @@ public class QuickSort {
 	public static void main(String[] args) {
 
 		
-		int[] a = {37,33,4,37,55,37,3};
+		int[] a = {37,33,4,39,55,37,39,5};
 		quicksort(a,0,a.length-1);
 		
 		System.out.println(Arrays.toString(a));;
@@ -34,7 +34,7 @@ public class QuickSort {
 	
 	private static int getpivot(int a[],int start, int end){
 		
-		int pivot = a[start]+1;
+		int pivot = a[start];
 		int left = start;
 		int right = end;
 		
